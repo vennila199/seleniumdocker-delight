@@ -19,7 +19,7 @@ pipeline{
         stage('Push Image'){
            
             steps{
-                sh 'docker push vennilasanthnam/selenium:latest'
+                bat 'docker push vennilasanthnam/selenium:latest'
                 
         }
 
