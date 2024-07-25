@@ -17,8 +17,11 @@ pipeline{
         }
 
         stage('Push Image'){
-           
+               environment{
+                DOCKER_HUB = credentials('dockerhub-creds')
+            }
             steps{
+                bat 'docker login -u %DOCKER_HUB_USR% -p %DOCKER_HUB_PSW%'
                 bat 'docker push vennilasanthnam/selenium:latest'
                 
         }
